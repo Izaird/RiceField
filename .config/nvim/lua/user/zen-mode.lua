@@ -7,11 +7,11 @@ zen_mode.setup({
 	window = {
 		backdrop = 1,
 		height = 0.9, -- height of the Zen window
-		width = 0.85,
+		width = 0.6,
 		options = {
 			signcolumn = "no", -- disable signcolumn
-			number = false, -- disable number column
-			relativenumber = false, -- disable relative numbers
+			-- number = false, -- disable number column
+			-- relativenumber = false, -- disable relative numbers
 			-- cursorline = false, -- disable cursorline
 			-- cursorcolumn = false, -- disable cursor column
 			-- foldcolumn = "0", -- disable fold column
