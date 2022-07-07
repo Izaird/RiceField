@@ -94,39 +94,49 @@ local m_mappings = {
   h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
   j = { "<cmd>BookmarkNext<cr>", "Next" },
   k = { "<cmd>BookmarkPrev<cr>", "Prev" },
-  s = {
-    "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
-    "Show",
-  },
+  s = { "<cmd>BookmarkShowAll<cr>", "Prev" },
+  -- s = {
+  --   "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
+  --   "Show",
+  -- },
   x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
   u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  b = { "<cmd>JABSOpen<cr>", "Buffers" },
+  b = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },
   -- ["b"] = {
   --   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   --   "Buffers",
   -- },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  -- ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["w"] = { "<cmd>w<CR>", "Write" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-  -- ["q"] = { "<cmd>q!<CR>", "Quit" },
+  ["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
   ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 
--- :lua require'lir.float'.toggle()
+  -- :lua require'lir.float'.toggle()
   -- ["f"] = {
   --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   --   "Find files",
   -- },
   -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
+  -- ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
+
+  B = {
+    name = "Browse",
+    i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
+    b = { "<cmd>Browse<cr>", "Browse" },
+    d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
+    f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
+    m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
+  },
 
   p = {
     name = "Packer",
@@ -135,6 +145,21 @@ local mappings = {
     s = { "<cmd>PackerSync<cr>", "Sync" },
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
+
+  o = {
+    name = "Options",
+    w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
+    r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
+    l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
+    s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
+    t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
+  },
+
+  s = {
+    name = "Split",
+    s = { "<cmd>split<cr>", "HSplit" },
+    v = { "<cmd>vsplit<cr>", "VSplit" },
   },
 
   r = {
@@ -222,7 +247,7 @@ local mappings = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
     F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -244,17 +269,20 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
+    u = { '<cmd>LuaSnipUnlinkCurrent<cr>', "Unlink Snippet" },
+
   },
 
-  s = {
-    name = "Surround",
-    ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
-    a = { "<cmd>lua require('surround').surround_add(true)<cr>", "Add" },
-    d = { "<cmd>lua require('surround').surround_delete()<cr>", "Delete" },
-    r = { "<cmd>lua require('surround').surround_replace()<cr>", "Replace" },
-    q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
-    b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
-  },
+  -- s = {
+  --   name = "Surround",
+  --   ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
+  --   a = { "<cmd>lua require('surround').surround_add(true)<cr>", "Add" },
+  --   d = { "<cmd>lua require('surround').surround_delete()<cr>", "Delete" },
+  --   r = { "<cmd>lua require('surround').surround_replace()<cr>", "Replace" },
+  --   q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
+  --   b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
+  -- },
 
   S = {
     -- name = "Session",
