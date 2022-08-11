@@ -1,7 +1,7 @@
 [user]
   email = 31055847+Izaird@users.noreply.github.com\n
-	name = Mothelet
+  name = Mothelet
 [alias]
-	tree = log --graph --decorate --oneline
+  tree = log --graph --decorate --oneline
 [init]
-	defaultBranch = main
+  defaultBranch = main
