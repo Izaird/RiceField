@@ -42,5 +42,6 @@ luac.out
 
 
 .config/nvim/plugin/packer_compiled.lua
+.config/zsh/.zcompdump
 java-debug/
 vscode-java-test/
