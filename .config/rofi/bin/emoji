@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+rofi \
+	-modi emoji \
+	-show emoji \
+  -emoji-format '{emoji}' \
+	-scroll-method 0 \
+	-terminal kitty \
+	-theme "$HOME"/.config/rofi/config/emoji.rasi
+😭
