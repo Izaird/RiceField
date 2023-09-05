@@ -1,5 +1,6 @@
 set previewer ~/.config/lf/lf_kitty_preview
 set cleaner ~/.config/lf/lf_kitty_clean
+set sortby time
 
 # Basic Settings
 set hidden true
@@ -79,11 +80,12 @@ map bg setwallpaper
 map C clear
 
 # Movement
-map gD cd ~/documents
-map gd cd ~/downloads
-map gp cd ~/pictures
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map gp cd ~/Pictures
 map gc cd ~/.config
+map gs cd ~/Pictures/Screenshots/
 map gr cd ~/repos
-map gv cd ~/videos
-map gs cd ~/.local/bin
-map gt cd ~/.local/share/Trash/files
+# map gv cd ~/videos
+# map glb cd ~/.local/bin
+# map gt cd ~/.local/share/Trash/files
