@@ -41,7 +41,17 @@ luac.out
 *.appimage
 
 
-.config/nvim/plugin/packer_compiled.lua
-.config/zsh/.zcompdump
 java-debug/
 vscode-java-test/
+
+#lvim 
+.config/lvim/plugin/packer_compiled.lua
+.config/lvim/lazy-lock.json
+.config/lvim/java
+
+#nvim
+.config/nvim/plugin/packer_compiled.lua
+
+
+#zsh
+.config/zsh/.zcompdump
