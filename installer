@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Get the location of the script, even when it's run from a different directory
+source_dir="$(cd "$(dirname "$0")" && pwd)/.config"
+target_dir="$HOME/.config/"
+
+echo $source_dir
+echo $target_dir
+
+
+for dir in "$source_dir"/*/
+do
+  dir_name=$(basename "$dir")
+  target_path="$target_dir$dir_name"
+
+  if [ ! -e "$target_path" ] 
+  then 
+    ln -s "$dir" "$target_path"
+    echo "Created symbolic link: $target_path -> $dir"
+  elif [ ! -L "$target_path" ] 
+  then
+    rm -drf $target_path
+    ln -s "$dir" "$target_path"
+    echo "Created symbolic link: $target_path -> $dir"
+  else 
+    echo "Symbolic link already exists: $target_path"
+  fi
+
+
+done
+
+
+echo "Done"
