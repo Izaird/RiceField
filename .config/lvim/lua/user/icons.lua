@@ -492,4 +492,4 @@ lvim.icons.kind = {
 -- -- 			CircuitBoard = " ",
 -- -- 		},
 -- -- 	}
--- -- end
+-- -- end

@@ -1,19 +1,21 @@
 require "user.lsp.languages.rust"
-require "user.lsp.languages.go"
+-- require "user.lsp.languages.go"
 require "user.lsp.languages.python"
 require "user.lsp.languages.js-ts"
 require "user.lsp.languages.sh"
 require "user.lsp.languages.emmet"
 require "user.lsp.languages.css"
+require "user.lsp.languages.php"
+require "user.lsp.languages.gdscript"
 
 
 
-
--- vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({ virtual_text = false })
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "java",
+  "php"
 }
 
 
@@ -22,9 +24,9 @@ lvim.builtin.treesitter.ensure_installed = {
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "google_java_format", filetypes = { "java" } },
-  { command = "stylua", filetypes = { "lua" } },
-  { command = "shfmt", filetypes = { "sh", "zsh" } },
-  { command = "prettier", filetypes = { "css" } },
+  { command = "stylua",             filetypes = { "lua" } },
+  { command = "shfmt",              filetypes = { "sh", "zsh" } },
+  { command = "prettier",           filetypes = { "css" } },
 }
 
 -- lvim.lsp.on_attach_callback = function(client, bufnr)

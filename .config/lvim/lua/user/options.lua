@@ -1,4 +1,4 @@
-lvim.colorscheme = "catppuccin-mocha"
+lvim.colorscheme = "tokyonight-night"
 -- lvim.colorscheme = "poimandres"
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true

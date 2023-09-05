@@ -5,6 +5,7 @@ lvim.plugins = {
   "ellisonleao/gruvbox.nvim",
   "LunarVim/synthwave84.nvim",
   { "catppuccin/nvim", name = "catppuccin" },
+  "folke/tokyonight.nvim",
   "roobert/tailwindcss-colorizer-cmp.nvim",
   "lunarvim/github.nvim",
   "nvim-treesitter/playground",
@@ -99,12 +100,12 @@ lvim.plugins = {
     build = "./install.sh",
   },
   "Bryley/neoai.nvim",
-  -- {
-  --   url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  --   config = function()
-  --     require("lsp_lines").setup()
-  --   end,
-  -- }
+  {
+    url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  }
 
   -- { -- show diagnoscics with arrows
   --   url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
