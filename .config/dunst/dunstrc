@@ -1,7 +1,8 @@
 [global]
 monitor = 0
-follow = mouse
-geometry = "280x50-20+90"
+follow = none
+width = (100,300)
+height = 200
 indicate_hidden = no
 shrink = no
 separator_height = 4
@@ -31,7 +32,7 @@ always_run_script = true
 title = Dunst
 class = Dunst
 corner_radius = 10
-origin = top-right
+origin = top-left
 offset = 8x69
 
 [shortcuts]
