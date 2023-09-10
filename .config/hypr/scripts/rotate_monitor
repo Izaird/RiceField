@@ -14,7 +14,7 @@ echo $transform
 
 if [ $transform -eq 0 ]
 then
-  hyprctl keyword monitor HDMI-A-1, 1920x1080, 2560x0, .9, transform, 3
+  hyprctl keyword monitor HDMI-A-1, 1920x1080, 2560x0, 1, transform, 3
 else
-  hyprctl keyword monitor HDMI-A-1, 1920x1080, 2560x0, .9
+  hyprctl keyword monitor HDMI-A-1, 1920x1080, 2560x0, 1
 fi
