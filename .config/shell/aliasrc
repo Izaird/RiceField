@@ -46,7 +46,7 @@ alias \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
 	sdn="shutdown -h now" \
-	v="lvim" \
+	v="nvim" \
 	p="pacman" \
   #XBPS package manager(Void)
 	# xi="sudo xbps-install" \

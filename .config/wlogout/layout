@@ -14,7 +14,7 @@
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "シャットダウン",
-    "keybind" : "s"
+    "keybind" : "S"
 }
 {
     "label" : "logout",
@@ -26,5 +26,5 @@
     "label" : "suspend",
     "action" : "systemctl suspend",
     "text" : "サスペンド",
-    "keybind" : "u"
+    "keybind" : "s"
 }

@@ -5,5 +5,5 @@ rofi \
   -emoji-format '{emoji}' \
 	-scroll-method 0 \
 	-terminal kitty \
-	-theme "$HOME"/.config/rofi/config/emoji.rasi
+	-theme "$HOME"/.config/rofimoji/themes/grid.rasi
 😭
