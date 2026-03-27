@@ -5,12 +5,9 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = {
-        preset = {
-    -- Used by the `header` section
-    header = [[
-
-
-
+      preset = {
+        -- Used by the `header` section
+        header = [[
      ...    .     ...                       ..⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   .~`"888x.!**h.-``888h.              x .d88"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
  dX   `8888   :X   48888>              5888R                    u.      ..    .     :⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

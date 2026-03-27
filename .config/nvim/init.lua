@@ -5,4 +5,3 @@ require("config.lazy")
 require("config.colorscheme")
 require("config.lsp")
 require("config.godot")
-

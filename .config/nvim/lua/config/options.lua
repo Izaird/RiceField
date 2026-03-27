@@ -33,7 +33,7 @@ opt.number = true -- set numbered lines
 opt.laststatus = 3
 opt.showcmd = false
 opt.ruler = false
-opt.relativenumber = true -- set relative numbered lines
+opt.relativenumber = false -- set relative numbered lines
 opt.numberwidth = 4 -- set number column width to 2 {default 4}
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 opt.wrap = false -- display lines as one long line
@@ -53,6 +53,7 @@ opt.shortmess:append("c")
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 opt.iskeyword:append("-")
+opt.virtualedit = "block"
 
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
