@@ -2,7 +2,7 @@
 
 monitorId=1
 monitorInfo=$(hyprctl monitors | awk '/^Monitor [^ ]+ \(ID '$monitorId'\):/,/^$/' )
-# echo $monitorInfo
+echo $monitorInfo
 
 
 # Use awk to extract the "transform" parameter and remove any non-numeric characters
@@ -14,7 +14,11 @@ echo $transform
 
 if [ $transform -eq 0 ]
 then
-  hyprctl keyword monitor HDMI-A-1, 1920x1080, 2560x0, 1, transform, 3
+  hyprctl --batch "
+  keyword monitorv2[DP-2]:position 2560x150;
+  keyword monitorv2[DP-2]:transform 1"
 else
-  hyprctl keyword monitor HDMI-A-1, 1920x1080, 2560x0, 1
+  hyprctl --batch "
+  hyprctl keyword monitorv2[DP-2]:position 2560x550;
+  keyword monitorv2[DP-2]:transform 0"
 fi

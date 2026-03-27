@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+function is_pureref_on_workspace {
+    local workspace_id="$1"
+    # Check if PureRef exists on the specified workspace
+    pureref_on_workspace=$(hyprctl clients | grep -B 6 "initialClass: PureRef" | grep "workspace: $workspace_id")
+    [[ -n "$pureref_on_workspace" ]]
+}
+
+function on_top {
+    if [[ ${1:0:10} == "fullscreen" ]]; then
+        # Remove the "fullscreen>>" prefix
+        event_data="${1#fullscreen>>}"
+
+        if [[ $event_data == 1 ]]; then
+            # Get current workspace ID
+            current_workspace=$(hyprctl activeworkspace | grep -oP 'ID \K\d+')
+
+            # Check if PureRef is on this workspace
+            if is_pureref_on_workspace "$current_workspace"; then
+                echo "PureRef detected on workspace $current_workspace, bringing to top"
+
+                hyprctl dispatch alterzorder top, initialclass:PureRef
+
+                # Bring PureRef to top and refresh workspace
+                # hyprctl --batch "
+                # dispatch alterzorder top, initialclass:PureRef ;
+                # dispatch workspace e-1 ;
+                # dispatch workspace e+1 ;"
+            else
+                echo "PureRef NOT on workspace $current_workspace, no action taken"
+            fi
+        fi
+    fi
+}
+
+function handle {
+    # Listen for all relevant events
+    case "${1%%>>*}" in  # Extract event name before ">>"
+        "activeworkspace"|"activewindowv2"|"openwindow"|"fullscreen")
+            on_top "$1"
+            ;;
+    esac
+}
+
+# Start listening to Hyprland events
+socat - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
