@@ -46,12 +46,52 @@ return {
 			enabled = true,
 			timeout = 3000,
 		},
-		picker = { enabled = true },
+		picker = {
+      enabled = true,
+      -- focus = "list",
+      win = {
+        input = {
+          keys = {
+            ["<A-s>"] = { "edit_vsplit", mode = { "i", "n" } },
+            ["<A-S>"] = { "edit_split", mode = { "i", "n" } },
+          }
+        },
+        -- list = {
+        --   keys = {
+        --     ["<A-s>"] = "edit_vsplit",
+        --     ["<A-S>"] = "edit_split",
+        --   }
+        -- }
+      }
+    },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = false },
 		statuscolumn = { enabled = false },
 		words = { enabled = false },
+    zen = {
+      enabled = true,
+      toggles = {
+        dim = true,
+        git_signs = false,
+        line_number     = false,
+        relative_number = false,
+        signcolumn      = "no",
+        indent          = false
+      },
+      win = {
+        style = {
+          mininal = true,
+          height = 80,
+          backdrop = {
+            transparent = false,
+            blend = 90,
+          }
+      }
+
+
+      }
+    },
 		styles = {
 			notification = {
 				-- wo = { wrap = true } -- Wrap notifications
@@ -502,6 +542,7 @@ return {
 				Snacks.terminal()
 			end,
 			desc = "Toggle Terminal",
+      mode = { "n", "v", "t"},
 		},
 		{
 			"<c-_>",

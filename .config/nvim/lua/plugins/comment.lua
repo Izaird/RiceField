@@ -2,64 +2,92 @@ return {
 	"numToStr/Comment.nvim",
 	lazy = false,
 	dependencies = {
-
 		{
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			event = "VeryLazy",
 		},
 	},
-
 	config = function()
 		vim.keymap.set("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", { desc = "Comment" })
 		vim.keymap.set("x", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", { desc = "Comment" })
 		vim.keymap.set("v", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", { desc = "Comment" })
-
 		vim.g.skip_ts_context_commentstring_module = true
 		---@diagnostic disable: missing-fields
 		require("ts_context_commentstring").setup({
 			enable_autocmd = false,
 		})
 
+		-- Fallback comment strings keyed by filename pattern or extension
+		local filename_commentstrings = {
+			inputrc   = "# %s",
+			gitconfig = "# %s",
+			Makefile  = "# %s",
+			makefile  = "# %s",
+			hosts     = "# %s",
+			fstab     = "# %s",
+		}
+
+		-- Extensions that have no filetype but should use #
+		local ext_commentstrings = {
+			conf  = "# %s",
+			cfg   = "# %s",
+			ini   = "; %s",
+			toml  = "# %s",
+		}
+
+		local ts_pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+
+		local function pre_hook(ctx)
+			-- 1. Try treesitter first
+			local ok, result = pcall(ts_pre_hook, ctx)
+			if ok and result then
+				return result
+			end
+
+			-- 2. Fall back: check vim's detected commentstring (set by filetype plugins)
+			local cs = vim.bo.commentstring
+			if cs and cs ~= "" and cs ~= "/*%s*/" then
+				-- only trust it if it's not the generic C default
+				return cs
+			end
+
+			-- 3. Fall back: match by filename (tail only)
+			local fname = vim.fn.expand("%:t") -- e.g. "inputrc", "Makefile"
+			if filename_commentstrings[fname] then
+				return filename_commentstrings[fname]
+			end
+
+			-- 4. Fall back: match by file extension
+			local ext = vim.fn.expand("%:e") -- e.g. "conf", "cfg"
+			if ext ~= "" and ext_commentstrings[ext] then
+				return ext_commentstrings[ext]
+			end
+
+			-- 5. Last resort: default to #
+			return "# %s"
+		end
+
 		require("Comment").setup({
-			---Add a space b/w comment and the line
 			padding = true,
-			---Whether the cursor should stay at its position
 			sticky = true,
-			---LHS of toggle mappings in NORMAL mode
 			toggler = {
-				---Line-comment toggle keymap
-				line = "gcc",
-				---Block-comment toggle keymap
+				line  = "gcc",
 				block = "gbc",
 			},
-			---LHS of operator-pending mappings in NORMAL and VISUAL mode
 			opleader = {
-				---Line-comment keymap
-				line = "gc",
-				---Block-comment keymap
+				line  = "gc",
 				block = "gb",
 			},
-			---LHS of extra mappings
 			extra = {
-				---Add comment on the line above
 				above = "gcO",
-				---Add comment on the line below
 				below = "gco",
-				---Add comment at the end of line
-				eol = "gcA",
+				eol   = "gcA",
 			},
-			---Enable keybindings
-			---NOTE: If given `false` then the plugin won't create any mappings
 			mappings = {
-				---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
 				basic = true,
-				---Extra mapping; `gco`, `gcO`, `gcA`
 				extra = true,
 			},
-			---Function to call before (un)comment
-			pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-			---Function to call after (un)comment
-			-- post_hook = nil,
+			pre_hook = pre_hook,
 		})
 	end,
 }

@@ -116,7 +116,7 @@ autocmd({ "TextYankPost" }, {
 })
 
 autocmd({ "FileType" }, {
-	pattern = { "gitcommit", "markdown", "NeogitCommitMessage" },
+	pattern = { "gitcommit", "markdown", "NeogitCommitMessage", "typst"},
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spell = true
@@ -150,3 +150,22 @@ autocmd({ "FileType" }, {
 	end,
 	desc = "Window navigation in sidekick terminal",
 })
+
+
+
+-- Set commentstring for files that lack a filetype or have specific names/extensions
+-- autocmd("BufReadPost", {
+--   pattern = "*",  -- runs for every file read
+--   callback = function()
+--     -- Only act if filetype is still empty
+--     if vim.bo.filetype == "" then
+--       local filename = vim.fn.expand("%:t")  -- basename
+--       local extension = vim.fn.expand("%:e") -- extension
+--       if filename == "inputrc" or extension == "conf" then
+--         vim.bo.commentstring = "# %s"
+--       end
+--       -- Add more conditions as needed
+--       -- e.g., if filename == "myfile" then ...
+--     end
+--   end,
+-- })

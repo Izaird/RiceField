@@ -57,3 +57,25 @@ opt.virtualedit = "block"
 
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
+
+
+vim.filetype.add({
+  extension = {
+    gdshader = "gdshader",
+    gdshaderinc = "gdshaderinc",
+  },
+})
+
+
+
+if vim.g.simpler_scrollback == "scrollback_mode" then
+  -- Disable the gutter
+  vim.opt.signcolumn = "no"
+
+  -- Disables the statusbar at the bottom
+  vim.opt.laststatus = 0
+
+  -- No colorcolumn in skitty
+  vim.opt.colorcolumn = ""
+
+end

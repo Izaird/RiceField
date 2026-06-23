@@ -21,7 +21,9 @@ vim.lsp.enable({
 	"taplo",
 	"yamlls",
   "gdscript",
-  "gshader_lsp"
+  "hyprls",
+  "gdshader_lsp",
+  "tinymist",
 })
 
 -- Configure diagnostic display with custom signs

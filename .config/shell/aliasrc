@@ -21,6 +21,7 @@ alias \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
+	ytt="yt --skip-download --write-thumbnail" \
 	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
@@ -30,13 +31,13 @@ alias \
 	ccat="highlight --out-format=ansi" \
 	ip="ip -color=auto"
 
-# Better versions of cli programs 
+# Better versions of cli programs
 alias \
   l='lsd --group-dirs=first'\
   ls='lsd --group-dirs=first'\
   ll='lsd -lh --group-dirs=first'\
   la='lsd -a --group-dirs=first'\
-  lla='lsd -lha --group-dirs=first'\
+  lla='lsd -lhaA --group-dirs=first'\
   cat="bat"
 
 # These common commands are just too long! Abbreviate them.
@@ -53,7 +54,7 @@ alias \
 	# xr="sudo xbps-remove -R" \
 	# xq="xbps-query" \
 
-# Git commands 
+# Git commands
 alias \
   gs='git status'\
   gb='git branch '\
@@ -72,3 +73,10 @@ alias \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
+
+# [subversion]
+# Alias svn to use a custom configuration location:
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+
+# Additionally, if you use adb, use the following alias:
+alias adb="HOME=$XDG_DATA_HOME/android adb"
