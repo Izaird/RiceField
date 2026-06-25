@@ -1,6 +1,6 @@
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "walker"
+local menu        = "hyprlauncher"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 

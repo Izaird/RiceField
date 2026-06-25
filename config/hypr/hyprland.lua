@@ -170,7 +170,7 @@ hl.config({
 hl.config({
     input = {
         kb_layout  = "us",
-        kb_variant = "",
+        kb_variant = "colemak_dh_ortho",
         kb_model   = "",
         kb_options = "",
         kb_rules   = "",
