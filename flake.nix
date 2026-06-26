@@ -8,6 +8,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+    # blender-bin.url = "https://flakehub.com/f/edolstra/blender-bin/*";
+
     # elephant.url = "github:abenz1267/elephant";
     # walker = {
     #   url = "github:abenz1267/walker";
@@ -15,6 +17,7 @@
     # };
 	};
 
+	# outputs = { nixpkgs, home-manager, blender-bin, ... }: {
 	outputs = { nixpkgs, home-manager, ... }: {
 		nixosConfigurations.Alpha = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
@@ -31,6 +34,11 @@
 					};
 
 				}
+    #     {
+				# 	environment.systemPackages = [
+				# 		blender-bin.packages.x86_64-linux.default
+				# 	];
+				# }
 			];
 		};
 	};

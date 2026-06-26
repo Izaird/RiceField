@@ -15,8 +15,8 @@ require("autostart")
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 require("env_var")
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+-- hl.env("XCURSOR_SIZE", "24")
+-- hl.env("HYPRCURSOR_SIZE", "24")
 
 
 -----------------------
@@ -41,6 +41,9 @@ hl.env("HYPRCURSOR_SIZE", "24")
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
+
+hl.env("HYPRCURSOR_THEME", "XCursor-Pro-Dark-Hyprcursor")
+hl.env("HYPRCURSOR_SIZE", "24")
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
@@ -170,7 +173,7 @@ hl.config({
 hl.config({
     input = {
         kb_layout  = "us",
-        kb_variant = "colemak_dh_ortho",
+        kb_variant = "",
         kb_model   = "",
         kb_options = "",
         kb_rules   = "",

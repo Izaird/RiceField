@@ -1,5 +1,17 @@
 { config, lib, pkgs, ... }:
 
+let
+  sddm-astronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "hyprland_kath";  # or any other theme
+    themeConfig = {
+      # Customize colors and settings
+      HeaderTextColor = "#d5c4a1";
+      # Background = "Backgrounds/your-custom-background.png";
+      # ... other theme configuration options
+    };
+  };
+in
+
 {
   imports =
     [
@@ -42,16 +54,77 @@
   };
   # programs.walker.enable = true;
 
+  programs.firefox.enable = true;
+
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      "chlffgpmiacpedhhbkiomidkjlcfhogd" # pushbullet
+      "bkkmolkhemgaeaeggcmfbghljjjoofoh" # Catppuccin Chrome Theme - Mocha
+      "mbniclmhobmnbdlbpiphghaielnnpgdp" # lightshot
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+      "nffaoalbilbmmfgbnbgppjihopabppdk" # Video Speed Controller
+      "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
+      "ldgfbffkinooeloadekpmfoklnobpien" # Raindrop
+      "jinjaccalgkegednnccohejagnlnfdag" # Violentmonkey
+    ];
+
+  };
+
+  programs.steam = {
+    enable = true;
+    extest.enable = true;
+    protontricks.enable = true;
+    remotePlay.openFirewall = true;
+    extraPackages = with pkgs; [
+      mangohud        # FPS/performance overlay
+      gamemode        # CPU/GPU performance boost while gaming
+    ];
+  };
+
+  programs.gamemode = {
+    enable = true;
+  };
+
+
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      akko3068 = {
+        devices = [ "/dev/input/by-id/usb-AKKO_AKKO_3068BT-event-kbd" ];
+        config = builtins.readFile ./config/kanata/akko_3068.kbd;
+      };
+    };
+  };
+
   services.displayManager.sddm = {
   	enable = true;
-	wayland.enable = true;
-	settings = {
-		Theme = {
-			CursorTheme = "Adwaita";
-			CursorSize = 24;
-		};
-	};
+    wayland.enable = true;
+    extraPackages = with pkgs; [
+      kdePackages.qtmultimedia # Required for video backgrounds/audio
+    ];
+    theme = "sddm-astronaut-theme";
+    settings = {
+      Theme = {
+        CursorSize = 60;
+        CursorTheme = "Adwaita";
+      };
+    };
   };
+
+
+  systemd.services.sddm-cursor-warp = {
+    description = "Warp cursor to DP-1 center on SDDM start";
+    wantedBy = [ "display-manager.service" ];
+    after = [ "display-manager.service" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.ydotool}/bin/ydotool mousemove --absolute -x 0 -y 720";
+    };
+  };
+
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -66,9 +139,6 @@
   };
 
 
-  services.kanata = {
-    enable = true;
-  };
 
   services.printing.enable = true;
 
@@ -131,6 +201,7 @@
      	"realtime"
      	"networkmanager"
      	"input"
+      "uinput"
 
      ];
      packages = with pkgs; [
@@ -138,19 +209,7 @@
      ];
    };
 
-  programs.firefox.enable = true;
 
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "chlffgpmiacpedhhbkiomidkjlcfhogd" # pushbullet
-      "mbniclmhobmnbdlbpiphghaielnnpgdp" # lightshot
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
-      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
-    ];
-
-  };
 
   environment.etc."xdg/menus/applications.menu".source =
   "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
@@ -163,15 +222,19 @@
     git
     btop
     kitty
+    ydotool
 
+    hyprcursor
     hyprpaper
     hyprlauncher
     hyprshutdown
 
     adwaita-icon-theme
+    sddm-astronaut
 
     bluetui
     wiremix
+    pavucontrol
 
     telegram-desktop
     # stoat-desktop
@@ -179,9 +242,17 @@
 
     anki
     davinci-resolve
-    # (blender.override { rocmSupport = true; })
-    # blender
-    pkgsRocm.blender
+    # pkgsRocm.blender
+    (pkgs.symlinkJoin {
+      name = "blender";
+      paths = [ pkgsRocm.blender ];
+      buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/blender \
+          --set LD_PRELOAD "${pkgsRocm.rocmPackages.rocm-comgr}/lib/libamd_comgr.so.3"
+      '';
+    })
+    godot
     gimp
     inkscape
     graphite
@@ -203,12 +274,28 @@
 
 
   ];
+
+
+
+  fileSystems."/home/izaird/Projects" = {
+    device = "/dev/disk/by-uuid/8a305523-3f1b-467e-b9f0-f3c8f13d6761";
+    fsType = "ext4";
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/ad2e0e92-aee0-4401-90b6-5b3677fcca8e";
+    fsType = "ext4";
+  };
+
+
   nixpkgs.config = {
     allowUnfree = true;
     # rocmSupport = true;
   };
 
   hardware.amdgpu.opencl.enable = true;
+
+  # programs.nix-ld.enable = true;
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -217,4 +304,3 @@
 
   system.stateVersion = "26.05";
 }
-
