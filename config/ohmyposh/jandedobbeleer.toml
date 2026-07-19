@@ -1,0 +1,90 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 4
+final_space = true
+
+[var]
+  PromptChar = "❯"
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'blue'
+    template = '{{ .Path }}'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'p:grey'
+    background = 'transparent'
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+
+[[blocks]]
+  type = 'prompt'
+  newline = true
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    background = 'transparent'
+    template = '{{ if .Env.POSH_VI_MODE }}{{ .Env.POSH_VI_MODE }}{{ else }}{{ .Var.PromptChar }}{{ end }}'
+    foreground_templates = [
+      '{{ if eq .Env.POSH_VI_MODE "❮" }}#98c379{{ end }}',
+      '{{ if eq .Env.POSH_VI_MODE "❯" }}#61afef{{ end }}',
+      '{{ if eq .Env.POSH_VI_MODE "󱨉" }}#c678dd{{ end }}',
+      '{{ if eq .Env.POSH_VI_MODE "▶" }}#e06c75{{ end }}'
+    ]
+    foreground = '#ffffff'
+
+
+
+# [transient_prompt]
+#   foreground_templates = [
+#     "{{if gt .Code 0}}red{{end}}",
+#     "{{if eq .Code 0}}magenta{{end}}",
+#   ]
+#   background = 'transparent'
+#   template = '❯ '
+#
+# [secondary_prompt]
+#   foreground = 'magenta'
+#   background = 'transparent'
+#   template = '❯❯ '

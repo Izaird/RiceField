@@ -8,7 +8,7 @@ return {
 			on_config_done = nil,
 			manual_mode = false,
 			detection_methods = { "pattern" },
-			patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn" },
+			patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "project.godot" },
 			ignore_lsp = {},
 			exclude_dirs = {},
 			show_hidden = false,

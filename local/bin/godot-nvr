@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# Godot -> Neovim launcher, adapted for project-local server.pipe + Hyprland focus
+set -euo pipefail
+
+NVR="${NVR:-nvr}"
+TERMINAL_CLASS="kitty"
+
+if ! command -v "$NVR" >/dev/null 2>&1; then
+  echo "nvr not found in PATH" >&2
+  exit 1
+fi
+
+LINE=""
+FILE=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    +[0-9]*) LINE="${1#+}"; shift ;;
+    *) FILE="$1"; shift ;;
+  esac
+done
+
+[ -z "$FILE" ] && exit 0
+
+dir="$(dirname "$(realpath "$FILE")")"
+while [[ "$dir" != "/" ]]; do
+  if [[ -f "$dir/project.godot" ]]; then
+    break
+  fi
+  dir="$(dirname "$dir")"
+done
+
+SOCKET="$dir/server.pipe"
+
+if [[ ! -S "$SOCKET" ]]; then
+  echo "No live Neovim server at $SOCKET" >&2
+  exit 1
+fi
+
+FILE_VIM="${FILE//\'/\'\'}"
+CMD=":execute 'edit ' . fnameescape('${FILE_VIM}')"
+[ -n "$LINE" ] && CMD="$CMD | call cursor($LINE,1)"
+CMD="$CMD | normal! zz"
+
+"$NVR" --servername "$SOCKET" --remote-send "<C-\\><C-N>${CMD}<CR>"
+
+if command -v hyprctl >/dev/null 2>&1; then
+  hyprctl dispatch focuswindow "class:^(${TERMINAL_CLASS})\$" >/dev/null 2>&1 || true
+fi

@@ -3,26 +3,19 @@
 
 	inputs = {
 		nixpkgs.url = "nixpkgs/nixos-unstable";
+    musnix.url = "github:musnix/musnix";
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-    # blender-bin.url = "https://flakehub.com/f/edolstra/blender-bin/*";
-
-    # elephant.url = "github:abenz1267/elephant";
-    # walker = {
-    #   url = "github:abenz1267/walker";
-    #   inputs.elephant.follows = "elephant";
-    # };
 	};
 
-	# outputs = { nixpkgs, home-manager, blender-bin, ... }: {
-	outputs = { nixpkgs, home-manager, ... }: {
+	outputs = { nixpkgs, home-manager, musnix, ... }: {
 		nixosConfigurations.Alpha = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
 				./configuration.nix
+        musnix.nixosModules.musnix
 				home-manager.nixosModules.home-manager
 				{
 					home-manager = {
@@ -34,11 +27,6 @@
 					};
 
 				}
-    #     {
-				# 	environment.systemPackages = [
-				# 		blender-bin.packages.x86_64-linux.default
-				# 	];
-				# }
 			];
 		};
 	};

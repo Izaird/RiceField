@@ -1,24 +1,31 @@
 local M = {}
 
--- paths to check for project.godot file
-local paths_to_check = {'/', '/../'}
-local is_godot_project = false
-local godot_project_path = ''
-local cwd = vim.fn.getcwd()
-
--- iterate over paths and check
-for key, value in pairs(paths_to_check) do
-    if vim.uv.fs_stat(cwd .. value .. 'project.godot') then
-        is_godot_project = true
-        godot_project_path = cwd .. value
-        break
+local function find_godot_project_root(start_path)
+  local dir = vim.fn.fnamemodify(start_path, ':p:h')
+  while dir ~= '/' do
+    if vim.uv.fs_stat(dir .. '/project.godot') then
+      return dir
     end
+    dir = vim.fn.fnamemodify(dir, ':h')
+  end
+  return nil
 end
 
--- check if server is already running in godot project path
-local is_server_running = vim.uv.fs_stat(godot_project_path .. '/server.pipe')
--- start server, if not already running
-if is_godot_project and not is_server_running then
-    vim.fn.serverstart(godot_project_path .. '/server.pipe')
-end
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    local start_path = vim.fn.argv(0)
+    if start_path == '' then
+      start_path = vim.fn.getcwd()
+    end
+
+    local root = find_godot_project_root(start_path)
+    if root then
+      local pipe = root .. '/server.pipe'
+      if not vim.uv.fs_stat(pipe) then
+        vim.fn.serverstart(pipe)
+      end
+    end
+  end,
+})
+
 return M

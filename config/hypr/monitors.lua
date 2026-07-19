@@ -28,8 +28,8 @@ hl.monitor({
 hl.monitor({
     output   = monitor_3,
     mode =  "1366x768@59.79",
-    cm = "adobe",
-    bitdepth = 8,
+    -- cm = "adobe",
+    -- bitdepth = 8,
     position = "-" .. position_x .."x150",
     -- position = "-1366x150",
     scale    = tostring(scaling_factor),

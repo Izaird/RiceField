@@ -1,0 +1,764 @@
+Running phase: unpackPhase
+@nix { "action": "setPhase", "phase": "unpackPhase" }
+unpacking source archive /nix/store/6qabc8jc5c38bvb9s0194v3mhxqh23wl-source
+source root is source
+Running phase: patchPhase
+@nix { "action": "setPhase", "phase": "patchPhase" }
+Running phase: updateAutotoolsGnuConfigScriptsPhase
+@nix { "action": "setPhase", "phase": "updateAutotoolsGnuConfigScriptsPhase" }
+Running phase: buildPhase
+@nix { "action": "setPhase", "phase": "buildPhase" }
+-- The C compiler identification is GNU 15.2.0
+-- The CXX compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /nix/store/xcnqqnhw9hb4j5rjgds2yjryi8qki5f3-gcc-wrapper-15.2.0/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /nix/store/xcnqqnhw9hb4j5rjgds2yjryi8qki5f3-gcc-wrapper-15.2.0/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (1.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /build/source/extern/lsp-framework/build_linux
+[  6%] [32mBuilding CXX object CMakeFiles/lspgen.dir/lsp/json/json.cpp.o[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/lspgen.dir/lspgen/lspgen.cpp.o[0m
+[ 18%] [1m[32mLinking CXX executable lspgen[0m
+[ 18%] Built target lspgen
+[ 25%] [1m[34mGenerating lsp types from meta model...[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/messagehandler.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/process.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/threadpool.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/io/standardio.cpp.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/io/socket.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/uri.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/json/json.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/lsp.dir/generated/lsp/types.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/connection.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/fileuri.cpp.o[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/lsp.dir/lsp/jsonrpc/jsonrpc.cpp.o[0m
+[01m[K/build/source/extern/lsp-framework/lsp/process.cpp:[m[K In constructor '[01m[Klsp::Process::Impl::[01;32m[KImpl[m[K(const std::string&, const lsp::Process::ArgList&)[m[K':
+[01m[K/build/source/extern/lsp-framework/lsp/process.cpp:93:32:[m[K [01;35m[Kwarning: [m[Kignoring return value of '[01m[Kssize_t[01;32m[K write[m[K(int, const void*, size_t)[m[K' declared with attribute '[01m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Common-Function-Attributes.html#index-warn_005funused_005fresult-function-attributewarn_unused_result]8;;[m[K' [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-result-Wunused-result]8;;[m[K]
+   93 |                         [01;35m[K::write(errPipe[1], &error, sizeof(error))[m[K;
+      |                         [01;35m[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[100%] [1m[32mLinking CXX static library liblsp.a[0m
+[100%] Built target lsp
+scons: Reading SConscript files ...
+Building for: linux (release) | Host: linux | Native: True
+scons: done reading SConscript files.
+scons: Building targets ...
+/nix/store/l9k0anq0z7zz81zcwy035jfwap9ga6rl-python3-3.13.13/bin/python3.13 scripts/generate_builtin_functions.py src/gdshader/data/canvas_fragment.json src/gdshader/data/canvas_global.json src/gdshader/data/canvas_light.json src/gdshader/data/canvas_vertex.json src/gdshader/data/fog.json src/gdshader/data/fog_global.json src/gdshader/data/global_functions.json src/gdshader/data/particle_global.json src/gdshader/data/particle_process.json src/gdshader/data/particle_start.json src/gdshader/data/sky.json src/gdshader/data/sky_global.json src/gdshader/data/spatial_fragment.json src/gdshader/data/spatial_global.json src/gdshader/data/spatial_light.json src/gdshader/data/spatial_vertex.json src/generated/builtins_data.hpp src/generated/builtins_data.cpp
+g++ -o src/utils/named_pipes/named_pipe.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/utils/named_pipes/named_pipe.cpp
+g++ -o src/gdshader/lexer/lexer.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/lexer/lexer.cpp
+g++ -o src/gdshader/semantics/symbol_table.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/semantics/symbol_table.cpp
+g++ -o src/gdshader/parser/parser_top_level.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/parser/parser_top_level.cpp
+g++ -o src/server/project_manager.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/server/project_manager.cpp
+g++ -o src/gdshader/semantics/visitors/formatter_visitor.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/semantics/visitors/formatter_visitor.cpp
+g++ -o src/gdshader/parser/parse_expressions.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/parser/parse_expressions.cpp
+g++ -o src/server/code_action_handler.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/server/code_action_handler.cpp
+g++ -o src/gdshader/ast/ast.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/ast/ast.cpp
+g++ -o src/gdshader/semantics/semantic_analyzer.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/semantics/semantic_analyzer.cpp
+g++ -o src/gdshader/semantics/visitors/type_checking_visitor.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/semantics/visitors/type_checking_visitor.cpp
+g++ -o src/gdshader/parser/parser_statements.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/parser/parser_statements.cpp
+g++ -o src/gdshader/parser/parser_core.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/parser/parser_core.cpp
+g++ -o src/main.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/main.cpp
+g++ -o src/server/gdshader_server.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/server/gdshader_server.cpp
+g++ -o src/gdshader/semantics/visitors/preprocessor_visitor.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/semantics/visitors/preprocessor_visitor.cpp
+g++ -o src/gdshader/parser/parser_preprocessor.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/parser/parser_preprocessor.cpp
+g++ -o src/gdshader/semantics/visitors/symbol_declaration_visitor.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/semantics/visitors/symbol_declaration_visitor.cpp
+g++ -o src/gdshader/semantics/visitors/linting_visitor.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/gdshader/semantics/visitors/linting_visitor.cpp
+g++ -o src/generated/builtins_data.o -c -std=c++20 -Wall -Wextra -O2 -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -Isrc -Iextern/lsp-framework -Iextern/lsp-framework/build_linux -Iextern/lsp-framework/build_linux/generated -Iextern/spdlog/include src/generated/builtins_data.cpp
+Building compilation database compile_commands.json
+In file included from [01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.cpp:2[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:32:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   32 |         void visit([01;35m[KTypeNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:33:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   33 |         void visit([01;35m[KLiteralNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IdentifierNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:34:36:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   34 |         void visit([01;35m[KIdentifierNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BinaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:35:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   35 |         void visit([01;35m[KBinaryOpNode* node[m[K) override {}
+      |                    [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UnaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:36:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   36 |         void visit([01;35m[KUnaryOpNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::FunctionCallNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:37:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   37 |         void visit([01;35m[KFunctionCallNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstructorNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:38:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   38 |         void visit([01;35m[KConstructorNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::MemberAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:39:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   39 |         void visit([01;35m[KMemberAccessNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ArrayAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:40:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   40 |         void visit([01;35m[KArrayAccessNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TernaryNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:41:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   41 |         void visit([01;35m[KTernaryNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ExpressionStatementNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:45:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   45 |         void visit([01;35m[KExpressionStatementNode* node[m[K) override {}
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:47:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   47 |         void visit([01;35m[KParameterNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:48:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   48 |         void visit([01;35m[KStructMemberNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ReturnNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:52:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   52 |         void visit([01;35m[KReturnNode* node[m[K) override {}
+      |                    [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:54:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   54 |         void visit([01;35m[KCaseNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DiscardNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:56:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   56 |         void visit([01;35m[KDiscardNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BreakNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:57:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   57 |         void visit([01;35m[KBreakNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ContinueNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:58:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   58 |         void visit([01;35m[KContinueNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DefineNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:61:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   61 |         void visit([01;35m[KDefineNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IncludeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:62:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   62 |         void visit([01;35m[KIncludeNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:67:39:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   67 |         void visit([01;35m[KGroupUniformsNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.cpp:1[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:46:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   46 |     void visit([01;35m[KTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:47:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   47 |     void visit([01;35m[KLiteralNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IdentifierNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:48:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   48 |     void visit([01;35m[KIdentifierNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BinaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:49:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   49 |     void visit([01;35m[KBinaryOpNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UnaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     void visit([01;35m[KUnaryOpNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::FunctionCallNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:51:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   51 |     void visit([01;35m[KFunctionCallNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstructorNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:52:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   52 |     void visit([01;35m[KConstructorNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::MemberAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:53:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   53 |     void visit([01;35m[KMemberAccessNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ArrayAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:54:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   54 |     void visit([01;35m[KArrayAccessNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TernaryNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:55:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   55 |     void visit([01;35m[KTernaryNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ExpressionStatementNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:56:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   56 |     void visit([01;35m[KExpressionStatementNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VariableDeclNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:57:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   57 |     void visit([01;35m[KVariableDeclNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:58:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   58 |     void visit([01;35m[KParameterNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:59:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   59 |     void visit([01;35m[KStructMemberNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IfNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:60:24:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   60 |     void visit([01;35m[KIfNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::WhileNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:61:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   61 |     void visit([01;35m[KWhileNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ForNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:62:25:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   62 |     void visit([01;35m[KForNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ReturnNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:63:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   63 |     void visit([01;35m[KReturnNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DoWhileNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:64:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   64 |     void visit([01;35m[KDoWhileNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:65:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   65 |     void visit([01;35m[KCaseNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::SwitchNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:66:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   66 |     void visit([01;35m[KSwitchNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DiscardNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:67:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   67 |     void visit([01;35m[KDiscardNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BreakNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:68:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   68 |     void visit([01;35m[KBreakNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ContinueNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:69:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   69 |     void visit([01;35m[KContinueNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ShaderTypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:70:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   70 |     void visit([01;35m[KShaderTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::RenderModeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:71:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   71 |     void visit([01;35m[KRenderModeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:72:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   72 |     void visit([01;35m[KGroupUniformsNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UniformNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:73:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   73 |     void visit([01;35m[KUniformNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VaryingNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:74:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   74 |     void visit([01;35m[KVaryingNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:75:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   75 |     void visit([01;35m[KConstNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:76:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   76 |     void visit([01;35m[KStructNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::FunctionNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:77:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   77 |     void visit([01;35m[KFunctionNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[Ksrc/gdshader/semantics/semantic_analyzer.cpp:3[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:46:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   46 |     void visit([01;35m[KTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:47:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   47 |     void visit([01;35m[KLiteralNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IdentifierNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:48:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   48 |     void visit([01;35m[KIdentifierNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BinaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:49:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   49 |     void visit([01;35m[KBinaryOpNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UnaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:50:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   50 |     void visit([01;35m[KUnaryOpNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::FunctionCallNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:51:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   51 |     void visit([01;35m[KFunctionCallNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstructorNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:52:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   52 |     void visit([01;35m[KConstructorNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::MemberAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:53:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   53 |     void visit([01;35m[KMemberAccessNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ArrayAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:54:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   54 |     void visit([01;35m[KArrayAccessNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TernaryNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:55:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   55 |     void visit([01;35m[KTernaryNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ExpressionStatementNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:56:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   56 |     void visit([01;35m[KExpressionStatementNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VariableDeclNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:57:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   57 |     void visit([01;35m[KVariableDeclNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:58:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   58 |     void visit([01;35m[KParameterNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:59:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   59 |     void visit([01;35m[KStructMemberNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IfNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:60:24:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   60 |     void visit([01;35m[KIfNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::WhileNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:61:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   61 |     void visit([01;35m[KWhileNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ForNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:62:25:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   62 |     void visit([01;35m[KForNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ReturnNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:63:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   63 |     void visit([01;35m[KReturnNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DoWhileNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:64:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   64 |     void visit([01;35m[KDoWhileNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:65:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   65 |     void visit([01;35m[KCaseNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::SwitchNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:66:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   66 |     void visit([01;35m[KSwitchNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DiscardNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:67:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   67 |     void visit([01;35m[KDiscardNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BreakNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:68:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   68 |     void visit([01;35m[KBreakNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ContinueNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:69:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   69 |     void visit([01;35m[KContinueNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ShaderTypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:70:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   70 |     void visit([01;35m[KShaderTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::RenderModeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:71:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   71 |     void visit([01;35m[KRenderModeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:72:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   72 |     void visit([01;35m[KGroupUniformsNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UniformNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:73:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   73 |     void visit([01;35m[KUniformNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VaryingNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:74:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   74 |     void visit([01;35m[KVaryingNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:75:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   75 |     void visit([01;35m[KConstNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:76:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   76 |     void visit([01;35m[KStructNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::PreprocessorVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::FunctionNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/preprocessor_visitor.hpp:77:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   77 |     void visit([01;35m[KFunctionNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[Ksrc/gdshader/semantics/semantic_analyzer.cpp:4[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:32:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   32 |         void visit([01;35m[KTypeNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:33:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   33 |         void visit([01;35m[KLiteralNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IdentifierNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:34:36:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   34 |         void visit([01;35m[KIdentifierNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BinaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:35:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   35 |         void visit([01;35m[KBinaryOpNode* node[m[K) override {}
+      |                    [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UnaryOpNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:36:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   36 |         void visit([01;35m[KUnaryOpNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::FunctionCallNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:37:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   37 |         void visit([01;35m[KFunctionCallNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstructorNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:38:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   38 |         void visit([01;35m[KConstructorNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::MemberAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:39:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   39 |         void visit([01;35m[KMemberAccessNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ArrayAccessNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:40:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   40 |         void visit([01;35m[KArrayAccessNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TernaryNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:41:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   41 |         void visit([01;35m[KTernaryNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ExpressionStatementNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:45:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   45 |         void visit([01;35m[KExpressionStatementNode* node[m[K) override {}
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:47:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   47 |         void visit([01;35m[KParameterNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:48:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   48 |         void visit([01;35m[KStructMemberNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ReturnNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:52:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   52 |         void visit([01;35m[KReturnNode* node[m[K) override {}
+      |                    [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:54:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   54 |         void visit([01;35m[KCaseNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DiscardNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:56:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   56 |         void visit([01;35m[KDiscardNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BreakNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:57:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   57 |         void visit([01;35m[KBreakNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ContinueNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:58:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   58 |         void visit([01;35m[KContinueNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DefineNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:61:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   61 |         void visit([01;35m[KDefineNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IncludeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:62:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   62 |         void visit([01;35m[KIncludeNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::SymbolDeclarationVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/symbol_declaration_visitor.hpp:67:39:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   67 |         void visit([01;35m[KGroupUniformsNode* node[m[K) override {};
+      |                    [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[Ksrc/gdshader/semantics/semantic_analyzer.cpp:5[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DiscardNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:65:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   65 |     void visit([01;35m[KDiscardNode* node[m[K) override {};
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:77:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   77 |     void visit([01;35m[KTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:78:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   78 |     void visit([01;35m[KLiteralNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstructorNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:79:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   79 |     void visit([01;35m[KConstructorNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:80:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   80 |     void visit([01;35m[KParameterNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:81:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   81 |     void visit([01;35m[KStructMemberNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:82:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   82 |     void visit([01;35m[KCaseNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BreakNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:83:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   83 |     void visit([01;35m[KBreakNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ContinueNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:84:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   84 |     void visit([01;35m[KContinueNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DefineNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:85:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   85 |     void visit([01;35m[KDefineNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IncludeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:86:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   86 |     void visit([01;35m[KIncludeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ShaderTypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:87:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   87 |     void visit([01;35m[KShaderTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::RenderModeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:88:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   88 |     void visit([01;35m[KRenderModeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:89:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   89 |     void visit([01;35m[KGroupUniformsNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VaryingNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:90:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   90 |     void visit([01;35m[KVaryingNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:91:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   91 |     void visit([01;35m[KStructNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[Ksrc/gdshader/semantics/semantic_analyzer.cpp:6[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:66:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   66 |     void visit([01;35m[KTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:67:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   67 |     void visit([01;35m[KLiteralNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IdentifierNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:68:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   68 |     void visit([01;35m[KIdentifierNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:69:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   69 |     void visit([01;35m[KParameterNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:70:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   70 |     void visit([01;35m[KStructMemberNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:71:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   71 |     void visit([01;35m[KCaseNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DefineNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:72:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   72 |     void visit([01;35m[KDefineNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IncludeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:73:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   73 |     void visit([01;35m[KIncludeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ShaderTypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:74:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   74 |     void visit([01;35m[KShaderTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::RenderModeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:75:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   75 |     void visit([01;35m[KRenderModeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:76:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   76 |     void visit([01;35m[KGroupUniformsNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UniformNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:77:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   77 |     void visit([01;35m[KUniformNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VaryingNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:78:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   78 |     void visit([01;35m[KVaryingNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:79:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   79 |     void visit([01;35m[KConstNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:80:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   80 |     void visit([01;35m[KStructNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[Ksrc/gdshader/semantics/visitors/linting_visitor.cpp:1[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:66:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   66 |     void visit([01;35m[KTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:67:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   67 |     void visit([01;35m[KLiteralNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IdentifierNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:68:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   68 |     void visit([01;35m[KIdentifierNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:69:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   69 |     void visit([01;35m[KParameterNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:70:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   70 |     void visit([01;35m[KStructMemberNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:71:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   71 |     void visit([01;35m[KCaseNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DefineNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:72:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   72 |     void visit([01;35m[KDefineNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IncludeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:73:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   73 |     void visit([01;35m[KIncludeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ShaderTypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:74:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   74 |     void visit([01;35m[KShaderTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::RenderModeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:75:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   75 |     void visit([01;35m[KRenderModeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:76:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   76 |     void visit([01;35m[KGroupUniformsNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::UniformNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:77:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   77 |     void visit([01;35m[KUniformNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VaryingNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:78:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   78 |     void visit([01;35m[KVaryingNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:79:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   79 |     void visit([01;35m[KConstNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::LintingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/linting_visitor.hpp:80:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   80 |     void visit([01;35m[KStructNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.cpp:3[m[K:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DiscardNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:65:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   65 |     void visit([01;35m[KDiscardNode* node[m[K) override {};
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::TypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:77:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   77 |     void visit([01;35m[KTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::LiteralNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:78:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   78 |     void visit([01;35m[KLiteralNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ConstructorNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:79:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   79 |     void visit([01;35m[KConstructorNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ParameterNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:80:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   80 |     void visit([01;35m[KParameterNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructMemberNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:81:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   81 |     void visit([01;35m[KStructMemberNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::CaseNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:82:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   82 |     void visit([01;35m[KCaseNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::BreakNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:83:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   83 |     void visit([01;35m[KBreakNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ContinueNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:84:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   84 |     void visit([01;35m[KContinueNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::DefineNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:85:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   85 |     void visit([01;35m[KDefineNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::IncludeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:86:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   86 |     void visit([01;35m[KIncludeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::ShaderTypeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:87:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   87 |     void visit([01;35m[KShaderTypeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::RenderModeNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:88:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   88 |     void visit([01;35m[KRenderModeNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::GroupUniformsNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:89:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   89 |     void visit([01;35m[KGroupUniformsNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::VaryingNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:90:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   90 |     void visit([01;35m[KVaryingNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~~^~~~[m[K
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:[m[K In member function ‘[01m[Kvirtual void gdshader_lsp::TypeCheckingVisitor::[01;32m[Kvisit[m[K(gdshader_lsp::StructNode*)[m[K’:
+[01m[Ksrc/gdshader/semantics/visitors/type_checking_visitor.hpp:91:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-parameter-Wunused-parameter]8;;[m[K]
+   91 |     void visit([01;35m[KStructNode* node[m[K) override {}
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+g++ -o bin/linux/release/gdshader_lsp_release_linux src/main.o src/utils/named_pipes/named_pipe.o src/generated/builtins_data.o src/gdshader/lexer/lexer.o src/gdshader/ast/ast.o src/gdshader/semantics/symbol_table.o src/gdshader/semantics/semantic_analyzer.o src/gdshader/semantics/visitors/linting_visitor.o src/gdshader/semantics/visitors/type_checking_visitor.o src/gdshader/semantics/visitors/formatter_visitor.o src/gdshader/semantics/visitors/preprocessor_visitor.o src/gdshader/semantics/visitors/symbol_declaration_visitor.o src/gdshader/parser/parser_statements.o src/gdshader/parser/parse_expressions.o src/gdshader/parser/parser_preprocessor.o src/gdshader/parser/parser_top_level.o src/gdshader/parser/parser_core.o src/server/project_manager.o src/server/gdshader_server.o src/server/code_action_handler.o -Lextern/lsp-framework/build_linux -llsp -lpthread
+scons: done building targets.
+buildPhase completed in 1 minutes 2 seconds
+Running phase: installPhase
+@nix { "action": "setPhase", "phase": "installPhase" }
+Running phase: fixupPhase
+@nix { "action": "setPhase", "phase": "fixupPhase" }
+shrinking RPATHs of ELF executables and libraries in /nix/store/5gv4fxx4zd5brb15f2mkg0rvm7xl8z8m-gdshader-lsp-cpp-0.2.5.1
+checking for references to /build/ in /nix/store/5gv4fxx4zd5brb15f2mkg0rvm7xl8z8m-gdshader-lsp-cpp-0.2.5.1...
+patching script interpreter paths in /nix/store/5gv4fxx4zd5brb15f2mkg0rvm7xl8z8m-gdshader-lsp-cpp-0.2.5.1
+stripping (with command strip and flags -S -p) in  /nix/store/5gv4fxx4zd5brb15f2mkg0rvm7xl8z8m-gdshader-lsp-cpp-0.2.5.1/bin
